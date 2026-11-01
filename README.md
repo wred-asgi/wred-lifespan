@@ -154,3 +154,9 @@ python benchmarks/request_overhead.py
 The benchmark compares raw Wred with the wrapper using in-process HTTP ASGI
 calls. It measures wrapper overhead, not network throughput or production
 capacity. The worker test is a finite deployment check, not a long-running soak.
+
+## Extension compatibility
+
+Follows the [Wred extension contract v1](https://github.com/wred-asgi/.github/blob/main/EXTENSIONS.md).
+Keep `@app.route` outermost for
+route decorators; register routes on the inner Wred app when using ASGI wrappers.
