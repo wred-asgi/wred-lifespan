@@ -1,0 +1,29 @@
+[build-system]
+requires = ["flit_core>=3.12,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "wred-lifespan"
+version = "0.1.0"
+description = "ASGI startup and shutdown hooks for Wred"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "Harrison Erd", email = "harrisonerd@gmail.com" }]
+dependencies = ["wred>=0.14,<0.15"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "pytest-asyncio>=0.24", "httpx>=0.27", "uvicorn>=0.30,<1"]
+
+[tool.flit.sdist]
+include = ["tests/", "examples/", "benchmarks/"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = ["integration: real worker processes and network sockets"]
+
+[tool.ruff]
+target-version = "py311"
