@@ -1,7 +1,7 @@
 # wred-lifespan
 
 Async startup and shutdown hooks for Wred, through one function:
-`lifespan_application`. Requires Python 3.11+, Wred 0.14, and an asyncio ASGI
+`lifespan_application`. Requires Python 3.11+, Wred 0.14–0.15, and an asyncio ASGI
 server such as Uvicorn.
 
 Install from PyPI:
@@ -157,6 +157,6 @@ capacity. The worker test is a finite deployment check, not a long-running soak.
 
 ## Extension compatibility
 
-Follows the [Wred extension contract v1](https://github.com/wred-asgi/.github/blob/main/EXTENSIONS.md).
+Follows the [Wred extension contract v1.1](https://github.com/wred-asgi/.github/blob/main/EXTENSIONS.md).
 Keep `@app.route` outermost for
 route decorators; register routes on the inner Wred app when using ASGI wrappers.

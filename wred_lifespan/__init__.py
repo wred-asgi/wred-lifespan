@@ -8,7 +8,7 @@ from inspect import iscoroutinefunction
 from traceback import format_exception
 from typing import Any, TypeAlias
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = ["lifespan_application"]
 
 Scope: TypeAlias = dict[str, Any]
